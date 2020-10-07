@@ -1,0 +1,50 @@
+/* tweets article container */
+.tweets .tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid black;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+/* hover event - shadow */
+.tweets .tweet:hover {
+  box-shadow: 10px 10px #aaaaaa;
+  /* visibility: visible; */
+}
+
+/* tweets article header */
+.tweets .tweet header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+/* tweets text paragraph */
+.tweets .tweet .content {
+  width: 100%;
+  border-bottom: solid;
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+
+/* tweets footer */
+.tweets .tweet footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* tweets article user-id in header */
+.tweets .tweet .handle {
+  visibility: hidden;
+}
+
+/* tweets article container hover event - show user id */
+.tweets .tweet:hover #user-id {
+  visibility: visible;
+}
