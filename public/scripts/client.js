@@ -54,6 +54,9 @@ const renderTweets = (tweets) => {
   }
 }
 
+
+
+
 // Fake data taken from initial-tweets.json
 const data = [
   {
@@ -88,5 +91,17 @@ $(document).ready(() => {
   // $('.container .tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
   renderTweets(data);
+
+  $('.container .new-tweet form').submit((event) => {
+    event.preventDefault();
+    // console.log(event);
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $(event.target).serialize()
+    }).then(() => {
+      console.log('Works');
+    })
+  })
 
 })
