@@ -4,6 +4,8 @@ nav {
   height: 120px;
   width: 100vw;
   padding: 1.5em;
+  position: fixed;
+  top: 0%;
   background-color: #4056A1;
   color: #FFFFFF; 
   font-family: 'Source Sans Pro', sans-serif;

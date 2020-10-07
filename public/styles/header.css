@@ -3,6 +3,7 @@
 #top-header {
   height: 400px;
   width: 100vw;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
