@@ -40,11 +40,12 @@
 }
 
 /* tweets article user-id in header */
-.tweets .tweet .handle {
+.tweets .tweet header .handle {
   visibility: hidden;
 }
 
 /* tweets article container hover event - show user id */
-.tweets .tweet:hover #user-id {
+.tweets .tweet:hover header .handle {
   visibility: visible;
+  color: #aaaaaa;
 }

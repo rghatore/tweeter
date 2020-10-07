@@ -50,7 +50,7 @@ const renderTweets = (tweets) => {
     // calls createTweetElement for each tweet
     const tweetBox = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $('.container .tweets').append(tweetBox);
+    $('.container .tweets').prepend(tweetBox);
   }
 }
 
@@ -58,50 +58,76 @@ const renderTweets = (tweets) => {
 
 
 // Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ]
 
 $(document).ready(() => {
-
+  
   // const $tweet = createTweetElement(tweetData);
   // Test / driver code (temporary)
   // console.log($tweet); // to see what it looks like
   // $('.container .tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  
+  // renderTweets(data);
 
-  renderTweets(data);
-
+  // submitting new tweets using Ajax POST request to the server
   $('.container .new-tweet form').submit((event) => {
+
     event.preventDefault();
-    // console.log(event);
+    // form validation
+    const textLength = $('#tweet-text').val().length;
+    console.log(textLength);
+    if (textLength <= 0) {
+      alert('Please note that empty tweets are not allowed.')
+    } else if (textLength > 140) {
+      alert('Please note that the tweet exceeds the character limit.')
+    } else {
+      // console.log(event);
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $(event.target).serialize()
+      }).then(() => {
+        // console.log(text);
+        $('.tweets .tweet').remove();
+        // console.log($('.tweets'));
+        loadTweets();
+      })
+    }
+  })
+  
+  const loadTweets = () => {
     $.ajax({
       url: "/tweets",
-      method: "POST",
-      data: $(event.target).serialize()
-    }).then(() => {
-      console.log('Works');
+      method: "GET"
+    }).then((tweets) => {
+      // console.log(tweets);
+      renderTweets(tweets);
     })
-  })
+  }
+      
+  loadTweets();
 
 })
