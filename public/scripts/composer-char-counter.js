@@ -13,17 +13,18 @@ $(document).ready(() => {
     const limit = 140;
     // console.log('tweetLength: ', tweetLength);
     // console.log($(this).parent().find(".counter").val());
-    let counter = $(this).parent().find(".counter");
+    let $counter = $(this).parent().find(".counter");
     // console.log('counter value: ', counter.val());
     let remaining = limit - tweetLength;
     // console.log('remaining :', remaining);
-    counter.val(remaining);
+    $counter.val(remaining);
 
     // change counter colour to red if text is over limit
     if (remaining < 0) {
-      counter.css( {"color": "red"})
+      $counter.addClass('red');
     } else {
-      counter.css( {"color": "black"})
+      // counter.css( {"color": "black"})
+      $counter.removeClass('red');
     }
 
   })
