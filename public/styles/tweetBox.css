@@ -4,13 +4,15 @@
   flex-direction: column;
   align-items: center;
   border: solid black;
+  border-radius: 5px;
   margin: 1em;
   padding: 0.5em;
+  background-color: lightyellow;
 }
 
 /* hover event - shadow */
 .tweets .tweet:hover {
-  box-shadow: 10px 10px #aaaaaa;
+  box-shadow: 5px 5px 5px yellow;
   /* visibility: visible; */
 }
 
@@ -21,6 +23,24 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
+}
+
+/* tweets article header avatar */
+.tweets .tweet header .avatar {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+/* tweets article header avatar image */
+.tweets .tweet header .avatar img {
+  /* width: 100%; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin-right: 0.5em;
 }
 
 /* tweets text paragraph */

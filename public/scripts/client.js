@@ -27,17 +27,41 @@ const escape = (text) => {
   return element.innerHTML;
 }
 
+// this function returns how many days ago the tweet was posted
+// or returns hours < 1 day or returns minutes < 1 hour
+const timePosted = (time) => {
+  const milliseconds = Date.now() - time; // in milliseconds
+  let minutes = (milliseconds / 1000) / 60;
+  let hours = minutes / 60;
+  if (minutes < 1) {
+    return "a few moments ago";
+  } else if (minutes < 60) {
+    minutes = `${Math.floor(minutes)} minute${ (minutes === 1) ? 's' : '' } ago`;
+    return minutes;
+  } else if (hours < 24) {
+    hours = `${Math.floor(hours)} hour${ (hours === 1) ? 's' : '' } ago`;
+    return hours;
+  } else {
+    let days = hours / 24;
+    days = `${Math.floor(days)} day${ (days === 1) ? 's' : '' } ago`;
+    return days;
+  }
+}
+
 const createTweetElement = (tweet) => {
   let output = "";
-  output += `<article class = "tweet">`
+  output += `<article class="tweet">`
   output += `<header>`
+  output += `<div class="avatar">`
+  output += `<img src="${escape(tweet.user.avatars)}">`
   output += `<p>${escape(tweet.user.name)}</p>`;
+  output += `</div>`
   // output += `<p>${tweet.user.name}</p>`
   output += `<p class="handle">${escape(tweet.user.handle)}</p>`
   output += `</header>`
   output += `<p class="content">${escape(tweet.content.text)}</p>`
   output += `<footer>`
-  output += `<date>${escape(tweet.created_at)}</date>`
+  output += `<date>${timePosted(tweet.created_at)}</date>`
   output += `<button>buttons</button>`
   output += `</footer></article>`
 
@@ -148,8 +172,9 @@ $(document).ready(() => {
       }).then(() => {
         $('.container .new-tweet span').hide();  // hide the error message
         // console.log(text);
-        $('.tweets .tweet').remove();
+        // $('.tweets .tweet').remove();
         // console.log($('.tweets'));
+        $('#tweet-text').val("");
         loadTweets();
       })
     }
@@ -161,6 +186,7 @@ $(document).ready(() => {
       method: "GET"
     }).then((tweets) => {
       // console.log(tweets);
+      $('.tweets .tweet').remove();
       renderTweets(tweets);
     })
   }
