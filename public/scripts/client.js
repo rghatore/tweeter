@@ -115,6 +115,10 @@ $(document).ready(() => {
   
   // renderTweets(data);
 
+  // create a span for errors to be shown above the form
+  $(`<span></span>`).insertBefore('.container .new-tweet form');
+  $('.container .new-tweet span').hide();
+
   // submitting new tweets using Ajax POST request to the server
   $('.container .new-tweet form').submit((event) => {
 
@@ -123,9 +127,18 @@ $(document).ready(() => {
     const textLength = $('#tweet-text').val().length;
     console.log(textLength);
     if (textLength <= 0) {
-      alert('Please note that empty tweets are not allowed.')
+      // alert('Please note that empty tweets are not allowed.')
+      // create
+      // hide
+      // slidedown
+      const message = 'Please note that empty tweets are not allowed.';
+      $('.container .new-tweet span').html(message);
+      $('.container .new-tweet span').slideDown();
     } else if (textLength > 140) {
-      alert('Please note that the tweet exceeds the character limit.')
+      // alert('Please note that the tweet exceeds the character limit.')
+      const message = 'Please note that the tweet exceeds the character limit.';
+      $('.container .new-tweet span').html(message);
+      $('.container .new-tweet span').slideDown();
     } else {
       // console.log(event);
       $.ajax({
@@ -133,6 +146,7 @@ $(document).ready(() => {
         method: "POST",
         data: $(event.target).serialize()
       }).then(() => {
+        $('.container .new-tweet span').hide();  // hide the error message
         // console.log(text);
         $('.tweets .tweet').remove();
         // console.log($('.tweets'));
