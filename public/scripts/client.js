@@ -16,18 +16,41 @@
 //   "created_at": 1461116232227
 // }
 
+// Safe HTML escape function
+const escape = (text) => {
+  let element = document.createElement('div');
+  // console.log('element: ', element);
+  let content = document.createTextNode(text);
+  // console.log('content: ', content);
+  element.appendChild(content);
+  // console.log(element.innerHTML);
+  return element.innerHTML;
+}
+
 const createTweetElement = (tweet) => {
   let output = "";
   output += `<article class = "tweet">`
   output += `<header>`
-  output += `<p>${tweet.user.name}</p>`
-  output += `<p class="handle">${tweet.user.handle}</p>`
+  output += `<p>${escape(tweet.user.name)}</p>`;
+  // output += `<p>${tweet.user.name}</p>`
+  output += `<p class="handle">${escape(tweet.user.handle)}</p>`
   output += `</header>`
-  output += `<p class="content">${tweet.content.text}</p>`
+  output += `<p class="content">${escape(tweet.content.text)}</p>`
   output += `<footer>`
-  output += `<date>${tweet.created_at}</date>`
+  output += `<date>${escape(tweet.created_at)}</date>`
   output += `<button>buttons</button>`
   output += `</footer></article>`
+
+  // output += `<article class = "tweet">`
+  // output += `<header>`
+  // output += `<p>${tweet.user.name}</p>`
+  // output += `<p class="handle">${tweet.user.handle}</p>`
+  // output += `</header>`
+  // output += `<p class="content">${tweet.content.text}</p>`
+  // output += `<footer>`
+  // output += `<date>${tweet.created_at}</date>`
+  // output += `<button>buttons</button>`
+  // output += `</footer></article>`
 
   // const $tweet = $(`<article class="tweet">
   //                     <header>
