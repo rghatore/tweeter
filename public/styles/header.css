@@ -16,10 +16,10 @@
 /* Screen below 768px - Smartphones */
 @media only screen and (max-width: 768px) {
   
-  #top-header {
+  /* #top-header {
     height: 520px;
     margin-top: 0;
-  }
+  } */
 
 }
 
