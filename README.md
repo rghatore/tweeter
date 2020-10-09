@@ -22,7 +22,7 @@ Starter code was provided by [Lighthouse Labs](https://www.lighthouselabs.ca/) (
 ## Screenshots
 
 !["Screenshot of smartphone display"](https://github.com/rghatore/tweeter/blob/master/docs/display-smartphone.png?raw=true)
-<img src="IMG_LINK" alt="Screenshot of tablet display" width="250px"/>
+<img src="https://github.com/rghatore/tweeter/blob/master/docs/display-tablet.png?raw=true" alt="Screenshot of tablet display" width="600px"/>
 !["Screenshot of desktop display"](https://github.com/rghatore/tweeter/blob/master/docs/display-desktop.png?raw=true)
 
 ## Features
