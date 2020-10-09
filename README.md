@@ -21,7 +21,8 @@ Starter code was provided by [Lighthouse Labs](https://www.lighthouselabs.ca/) (
 
 ## Screenshots
 
-["Screenshot of smartphone display"](https://github.com/rghatore/tweeter/blob/master/docs/display-smartphone.png?raw=true)
+[Screenshot of smartphone display](https://github.com/rghatore/tweeter/blob/master/docs/display-smartphone.png?raw=true)
+[Screenshot of tablet display](https://github.com/rghatore/tweeter/blob/master/docs/display-tablet.png?raw=true)
 
 ## Features
 
