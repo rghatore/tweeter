@@ -52,6 +52,8 @@
 .tweets .tweet .content {
   width: 100%;
   border-bottom: solid;
+  overflow-wrap: anywhere;
+  padding-bottom: 5px;
   /* display: flex; */
   /* justify-content: space-between; */
 }
@@ -75,4 +77,20 @@
   color: #aaaaaa;
 }
 
-/*  */
+/* tweet icons - flag, retweet and like */
+.tweets .tweet .icons .fas {
+  padding-left: 5px;
+  color: #4056A1;
+  font-size: 0.75em;
+  opacity: 50%;
+}
+
+/* tweets article container hover event - show clearly flag, retweet and like */
+.tweets .tweet:hover .icons .fas {
+  opacity: 100%;
+}
+
+/* tweet date posted */
+.tweets .tweet footer date {
+  font-size: 0.75em;
+}

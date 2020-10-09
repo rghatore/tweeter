@@ -31,20 +31,20 @@ const escape = (text) => {
 // or returns hours < 1 day or returns minutes < 1 hour
 const timePosted = (time) => {
   const milliseconds = Date.now() - time; // in milliseconds
-  let minutes = (milliseconds / 1000) / 60;
-  let hours = minutes / 60;
-  if (minutes < 1) {
+  const minutesPassed = Math.floor((milliseconds / 1000) / 60);
+  const hoursPassed = Math.floor(minutesPassed / 60);
+  const daysPassed = Math.floor(hoursPassed / 24);
+  const yearsPassed = Math.floor(daysPassed / 365);
+  if (minutesPassed < 1) {
     return "a few moments ago";
-  } else if (minutes < 60) {
-    minutes = `${Math.floor(minutes)} minute${ (minutes === 1) ? 's' : '' } ago`;
-    return minutes;
-  } else if (hours < 24) {
-    hours = `${Math.floor(hours)} hour${ (hours === 1) ? 's' : '' } ago`;
-    return hours;
+  } else if (minutesPassed < 60) {
+    return `${minutesPassed} minute${ (minutesPassed !== 1) ? 's' : '' } ago`;
+  } else if (hoursPassed < 24) {
+    return `${hoursPassed} hour${ (hoursPassed !== 1) ? 's' : '' } ago`;
+  } else if (daysPassed < 365) {
+    return `${daysPassed} day${ (daysPassed !== 1) ? 's' : '' } ago`;
   } else {
-    let days = hours / 24;
-    days = `${Math.floor(days)} day${ (days === 1) ? 's' : '' } ago`;
-    return days;
+    return `${yearsPassed} year${ (yearsPassed !== 1) ? 's' : '' } ago`;
   }
 }
 
@@ -179,6 +179,7 @@ $(document).ready(() => {
         // $('.tweets .tweet').remove();
         // console.log($('.tweets'));
         $('#tweet-text').val("");
+        $('.new-tweet form div .counter').val(140);
         loadTweets();
       })
     }

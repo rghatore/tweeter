@@ -27,10 +27,10 @@
 }
 /* text area */
 #tweet-text {
-  /* appearance: none; */
   resize: none;
-  margin-top: 0.5em;
-  height: 2em;
+  margin-top: 1em;
+  outline: none;
+  height: 1.5em;
   width: 100%;
   border: none;
   border-bottom: solid;
@@ -47,6 +47,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+/* new-tweet counter - red over limit */
+.new-tweet form div .red {
+  color: red;
 }
 
 /* tweet button */
