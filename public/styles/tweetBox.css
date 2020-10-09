@@ -1,4 +1,4 @@
-/* tweets section */
+/* Styling for showing the tweets */
 .tweets {
   width: 90%;
 }
@@ -15,10 +15,9 @@
   background-color: lightyellow;
 }
 
-/* hover event - shadow */
+/* tweets article hover event - shadow */
 .tweets .tweet:hover {
   box-shadow: 5px 5px 5px yellow;
-  /* visibility: visible; */
 }
 
 /* tweets article header */
@@ -32,7 +31,6 @@
 
 /* tweets article header avatar */
 .tweets .tweet header .avatar {
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,10 +39,6 @@
 
 /* tweets article header avatar image */
 .tweets .tweet header .avatar img {
-  /* width: 100%; */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   margin-right: 0.5em;
 }
 
@@ -54,8 +48,6 @@
   border-bottom: solid;
   overflow-wrap: anywhere;
   padding-bottom: 5px;
-  /* display: flex; */
-  /* justify-content: space-between; */
 }
 
 /* tweets footer */
@@ -71,7 +63,7 @@
   visibility: hidden;
 }
 
-/* tweets article container hover event - show user id */
+/* tweets article hover event - show user id */
 .tweets .tweet:hover header .handle {
   visibility: visible;
   color: #aaaaaa;
@@ -85,7 +77,7 @@
   opacity: 50%;
 }
 
-/* tweets article container hover event - show clearly flag, retweet and like */
+/* tweets article hover event - show clearly flag, retweet and like */
 .tweets .tweet:hover .icons .fas {
   opacity: 100%;
 }
@@ -97,7 +89,9 @@
 
 /* Screen below 768px - Smartphones */
 @media only screen and (max-width: 768px) {
+ 
   .tweets .tweet .icons .fas {
     opacity: 0%;
   }
+  
 }

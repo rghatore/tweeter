@@ -1,5 +1,4 @@
 /* Adding style for the header - includes profile picture and name  */
-
 #top-header {
   height: 400px;
   width: 100vw;
@@ -11,16 +10,6 @@
   line-height: 0;
   background-image: url(../images/xv.png);
   background-color: #fdfd66;
-}
-
-/* Screen below 768px - Smartphones */
-@media only screen and (max-width: 768px) {
-  
-  /* #top-header {
-    height: 520px;
-    margin-top: 0;
-  } */
-
 }
 
 /* Screen over 1024px - Desktops */
