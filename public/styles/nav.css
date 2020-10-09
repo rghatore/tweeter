@@ -1,9 +1,9 @@
 /* Adding style for the navigation bar */
-
+/* Navigation bar */
 nav {
   height: 120px;
   width: 100vw;
-  padding: 1.5em;
+  padding: 1em 1.5em;
   position: fixed;
   top: 0%;
   background-color: #4056A1;
@@ -11,9 +11,54 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
 }
 
-nav span {
+/* Navigation heder text - Tweeter */
+nav h2 {
+  margin: 0;
   font-family: 'Bungee', sans-serif;
+}
+
+/* Navigation items on the right */
+nav .extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: salmon; */
+}
+
+/* Navigation span text - write a new tweet */
+nav .extra p {
+  /* padding: 0.4em; */
+  margin: 0;
+  /* flex-grow: 1; */
+  /* background-color: seagreen; */
+}
+
+/* Navigation button for new tweets */
+nav .extra img {
+  margin: 0;
+  padding-bottom: 0.3em;
+  /* background-color: silver; */
+  width: 1em;
+  /* flex-grow: 1; */
+  /* background-color: red; */
+  animation-duration: 0.8s;
+  animation-name: jump;
+  animation-iteration-count: infinite;
+}
+
+/* Button animation */
+@keyframes jump {
+  from {
+    padding-top: 0em;
+    padding-bottom: 0.3em;
+  }
+
+  to {
+    padding-top: 0.3em;
+    padding-bottom: 0;
+  }
+
 }

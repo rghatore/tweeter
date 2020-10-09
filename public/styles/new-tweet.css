@@ -28,7 +28,8 @@
 #tweet-text {
   /* appearance: none; */
   resize: none;
-  height: auto;
+  margin-top: 0.5em;
+  height: 2em;
   width: 100%;
   border: none;
   border-bottom: solid;

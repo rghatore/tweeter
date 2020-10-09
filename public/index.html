@@ -33,13 +33,19 @@
 
     <!-- Character counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Show or hide form JS -->
+    <script type="text/javascript" src="/scripts/hide-show-form.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
-      <p><b>Write</b> a new tweet</p>
+      <h2>tweeter</h2>
+      <div class='extra'>
+        <p><b>Write</b> a new tweet</p>
+        <img class="down-arrow" src="/images/navigate-arrows-pointing-to-down.png">
+      </div>
     </nav>
     <!-- Header which includes hard coded user profile picture and name -->
     <header id="top-header">
@@ -58,8 +64,8 @@
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
