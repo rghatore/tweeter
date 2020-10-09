@@ -62,3 +62,13 @@ nav .extra img {
   }
 
 }
+
+/* Screen below 768px - Smartphones */
+@media only screen and (max-width: 768px) {
+  
+  nav {
+    background-color: transparent;
+    color: #545149;
+  }
+
+}

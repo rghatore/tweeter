@@ -62,7 +62,11 @@ const createTweetElement = (tweet) => {
   output += `<p class="content">${escape(tweet.content.text)}</p>`
   output += `<footer>`
   output += `<date>${timePosted(tweet.created_at)}</date>`
-  output += `<button>buttons</button>`
+  output += `<span class="icons">`
+  output += `<i class="fas fa-flag"></i>`
+  output += `<i class="fas fa-retweet"></i>`
+  output += `<i class="fas fa-heart"></i>`
+  output += `</span>`
   output += `</footer></article>`
 
   // output += `<article class = "tweet">`

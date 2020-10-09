@@ -1,12 +1,13 @@
 /* Adding style for the new tweet form section  */
 
 .new-tweet {
-  width: 50%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* for error message */
 .new-tweet span {
   width: 100%;
   color: red;
@@ -16,7 +17,7 @@
   /* flex-direction: column; */
   /* align-items: flex-start; */
 }
-
+/* form styling */
 .new-tweet form {
   width: 100%;
   /* position: relative; */
@@ -24,7 +25,7 @@
   flex-direction: column;
   align-items: flex-start;
 }
-
+/* text area */
 #tweet-text {
   /* appearance: none; */
   resize: none;
@@ -36,17 +37,23 @@
   background-color: inherit;
 }
 
+/* tweet button and counter */
 .new-tweet form div {
   width: 100%;
+  margin: 0.2em 0;
   font-family: 'Bungee', sans-serif;
   /* background-color: violet; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
+/* tweet button */
 .new-tweet button {
+  /* margin-top: 1px; */
   border: none;
+  border-radius: 2px;
   background-color: #4056A1;
   color: #FFFFFF; 
 }
